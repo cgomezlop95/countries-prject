@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 export function Countries() {
   const countryApi = "https://restcountries.com/v3.1/all";
@@ -19,7 +20,13 @@ export function Countries() {
       <h1>Country list</h1>
       <ul>
         {countries?.map((singleCountry, index) => {
-          return <li key={index}>{singleCountry.name.official}</li>;
+          return (
+            <li key={index}>
+              <Link to={singleCountry.cca2}>
+                {singleCountry.name.official}
+              </Link>
+            </li>
+          );
         })}
       </ul>
     </>
