@@ -1,19 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-
 import { Homepage } from "./Homepage";
-import { Countries } from "./Countries";
-//import { Navbar } from "./Navbar";
-import { ButtonAppBar } from "./ButtonAppBar";
-import { TitlebarImageList } from "./TitlebarImageList";
-import { Country } from "./Country";
+import { NavBar } from "./NavBar";
+import { CountryImageList } from "./CountryImageList";
+import { CountryCard } from "./CountryCard";
 
 function App() {
   return (
     <Routes>
-      <Route element={<ButtonAppBar />}>
+      <Route element={<NavBar />}>
         <Route path="/" element={<Homepage />} />
-        <Route path="/countries" element={<TitlebarImageList />} />
-        <Route path="/countries/:id" element={<Country />} />
+        <Route path="/countries" element={<CountryImageList />} />
+        <Route path="/countries/:id" element={<CountryCard />} />
       </Route>
     </Routes>
   );

@@ -6,7 +6,7 @@ import ListSubheader from "@mui/material/ListSubheader";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
-export function TitlebarImageList() {
+export function CountryImageList() {
   const countryApi = "https://restcountries.com/v3.1/all";
 
   const fetchData = async () => {
@@ -21,8 +21,8 @@ export function TitlebarImageList() {
   });
 
   return (
-    <ImageList sx={{ width: 1000, height: 450 }} cols={4}>
-      <ImageListItem key="Subheader" >
+    <ImageList sx={{ width: 1000, height: 600 }} cols={4}>
+      <ImageListItem key="Subheader">
         <ListSubheader component="div">Countries</ListSubheader>
       </ImageListItem>
       {countries?.map((item, index) => (
