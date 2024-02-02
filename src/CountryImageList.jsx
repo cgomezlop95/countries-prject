@@ -1,8 +1,6 @@
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-import ListSubheader from "@mui/material/ListSubheader";
-
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
@@ -21,13 +19,17 @@ export function CountryImageList() {
   });
 
   return (
-    <ImageList sx={{ width: 1000, height: 600 }} cols={4}>
-      <ImageListItem key="Subheader">
-        <ListSubheader component="div">Countries</ListSubheader>
-      </ImageListItem>
+    <ImageList
+      sx={{ width: 1400 }}
+      cols={5}
+      rowHeight={164}
+      variant="woven"
+      gap={3}
+      style={{ margin: 20 }}
+    >
       {countries?.map((item, index) => (
         <Link key={index} to={item.cca2}>
-          <ImageListItem key={index}>
+          <ImageListItem>
             <img
               srcSet={`${item.flags.png}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.flags.png}?w=248&fit=crop&auto=format`}

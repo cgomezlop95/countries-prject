@@ -3,7 +3,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { CircularColor } from "./CircularColor";
@@ -32,6 +31,7 @@ export function CountryCard() {
     );
   }
 
+  console.log(countryData);
   const languageArrayValues = Object.values(countryData.languages);
 
   return (
@@ -48,7 +48,7 @@ export function CountryCard() {
             <Typography gutterBottom variant="h5" component="div">
               {countryData.name.official}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" component="div">
               <p>
                 <b>Country Code:</b> {countryData.cca2}
               </p>
